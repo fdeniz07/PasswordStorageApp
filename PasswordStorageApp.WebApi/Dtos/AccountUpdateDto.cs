@@ -10,13 +10,17 @@ namespace PasswordStorageApp.WebApi.Dtos
 
         public Account ToAccount(Account account)
         {
-            return new Account
-            {
-                Id = Id,
-                Username = Username,
-                Password = Password,
-                CreatedOn = DateTimeOffset.UtcNow
-            };
+            account.Username = Username;
+            account.Password = Password;
+
+            return account;
+            //return new Account
+            //{
+            //    Id = Id,
+            //    Username = Username,
+            //    Password = Password,
+            //    CreatedOn = DateTimeOffset.UtcNow
+            //};
         }
     }
 }
